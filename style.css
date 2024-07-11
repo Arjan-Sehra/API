@@ -1,0 +1,124 @@
+    .container {
+        display: flex;
+    }
+
+    .sidebar {
+        width: 33.33%;
+        background-color: #f3f3f3;
+        padding: 20px;
+        height: 100vh;
+        position: fixed;
+        overflow-y: auto;
+        top: 0;
+        left: 0;
+    }
+
+    .content {
+        margin-left: 33.33%;
+        padding: 20px;
+        background-color: #fff;
+        overflow-y: auto;
+        position: relative;
+        left: 0%;
+        top: 0;
+        right: 66.67%;
+    }
+
+    .dropbtn {
+        background-color: #4CAF50;
+        color: white;
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        text-align: left;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+    .dropdown-content a:hover {background-color: #f1f1f1}
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .dropdown:hover .dropbtn {
+        background-color: #3e8e41;
+    }
+
+    .basic-title {
+        font-family: Arial, sans-serif;
+        font-size: 18px;
+        color: #333333;
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        font-weight: bold; 
+    }
+
+    .basic-subtitle {
+        font-family: Arial, sans-serif; 
+        font-size: 15px;
+        color: #353363;
+        text-align: center;
+        margin-top: 20px; 
+        margin-bottom: 20px; 
+        font-weight: bold; 
+    }
+
+    pre, code {
+        display: block;
+        background-color: #1e1e1e;
+        color: #dcdcdc;
+        padding: 10px;
+        margin: 10px 0;
+        overflow-x: auto; 
+        font-family: 'Courier New', Courier, monospace;
+        border-radius: 4px;
+    }
+    
+    .key {
+        color: #9cdcfe;
+    }
+    
+    .string {
+        color: #ce9178;
+    }
+    
+    .number {
+        color: #b5cea8;
+    }
+    
+    .punctuation {
+        color: #d4d4d4;
+    }
+    
+
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+      
+      th, td {
+        padding: 10px;
+        text-align: left;
+      }
+      
+      table {
+        width: 100%;
+      }

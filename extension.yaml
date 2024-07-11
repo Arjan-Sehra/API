@@ -1,0 +1,1427 @@
+---
+openapi: 3.0.0
+info:
+  title: Sample API
+  description: This is a sample API to demonstrate Swagger documentation.
+  version: 1.0.0
+servers:
+- url: https://virtserver.swaggerhub.com/AS9E20/web/1.0.0
+  description: SwaggerHub API Auto Mocking
+- url: http://api.sample.com/v1
+  description: Production server
+paths:
+  /announcements:
+    get:
+      tags:
+      - Announcements
+      summary: List all announcements
+      responses:
+        "200":
+          description: Successfully retrieved list of announcements
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Announcement'
+    post:
+      tags:
+      - Announcements
+      summary: Create an item
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AnnouncementsPostRequest'
+        required: true
+      responses:
+        "201":
+          description: Announcement created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AnnouncementsPostResponse'
+    options:
+      tags:
+      - Announcements
+      summary: Options
+      responses:
+        "200":
+          description: Retrieves information regarding how to interact with announcements
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AnnouncementOptions'
+    head:
+      tags:
+      - Announcements
+      summary: Retrieves headers of all announcements
+      responses:
+        "200":
+          description: Successfully retrieved the headers
+  /announcements/{Id}:
+    get:
+      tags:
+      - Announcements
+      summary: Get a specific announcement with additional information
+      parameters:
+      - name: Id
+        in: path
+        description: Announcement Id
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+          format: int64
+          example: 1
+      responses:
+        "200":
+          description: Successfully retrieved the announcement
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AnnouncementsPostResponse'
+        "201":
+          description: Item created
+    put:
+      tags:
+      - Announcements
+      summary: Edit an announcement
+      parameters:
+      - name: Id
+        in: path
+        description: Announcement Id
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+          format: int64
+          example: 1
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AnnouncementstIdPutRequest'
+        required: true
+      responses:
+        "200":
+          description: Successfully edited an announcement
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/AnnouncementsIdPutSuccessfulResponse'
+    delete:
+      tags:
+      - Announcements
+      summary: deleting an announcement
+      parameters:
+      - name: Id
+        in: path
+        description: Announcement Id
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+          format: int64
+          example: 1
+      responses:
+        "200":
+          description: Successfully deleted an announcement
+    options:
+      tags:
+      - Announcements
+      summary: Retrieves information regarding interactions with announcementId
+      parameters:
+      - name: Id
+        in: path
+        description: Announcement Id
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+          format: int64
+          example: 1
+      responses:
+        "200":
+          description: Successfully retrieved options information
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/AnnouncementIdOptions'
+    head:
+      tags:
+      - Announcements
+      summary: Retrieves headers for an announcement
+      parameters:
+      - name: Id
+        in: path
+        description: Announcement Id
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+          format: int64
+          example: 1
+      responses:
+        "200":
+          description: Successfully retrieved the headers
+    patch:
+      tags:
+      - Announcements
+      summary: edit an announcement
+      parameters:
+      - name: Id
+        in: path
+        description: Announcement Id
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+          format: int64
+          example: 1
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AnnouncementsIdPatchRequest'
+        required: true
+      responses:
+        "200":
+          description: Successfully edited an announcement
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/AnnouncementsIdPatchResponse'
+  /reports:
+    get:
+      tags:
+      - Reports
+      summary: Get all the current reports
+      responses:
+        "200":
+          description: Successfully retrieved list of items
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Reports'
+    post:
+      tags:
+      - Reports
+      summary: Create an item
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReportsPostRequest'
+        required: true
+      responses:
+        "201":
+          description: Item created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReportsPostResponse'
+    options:
+      tags:
+      - Reports
+      summary: Retrieves information regarding interactions with reports
+      responses:
+        "200":
+          description: Successfully retrieved options information
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ReportsOptions'
+    head:
+      tags:
+      - Reports
+      summary: Retrieves headers for all report
+      responses:
+        "200":
+          description: Successfully retrieved headers
+  /reports/{Id}:
+    get:
+      tags:
+      - Reports
+      summary: Get a specific report
+      parameters:
+      - name: Id
+        in: path
+        description: Report Id
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+          format: int64
+          example: 1
+      responses:
+        "200":
+          description: Successfully retrieved list of items
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ReportId'
+    put:
+      tags:
+      - Reports
+      summary: edit a report
+      parameters:
+      - name: Id
+        in: path
+        description: Report Id
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+          format: int64
+          example: 1
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReportsPut'
+        required: true
+      responses:
+        "200":
+          description: Successfully edited a report
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ReportsPut'
+    delete:
+      tags:
+      - Reports
+      summary: deleting a report
+      parameters:
+      - name: Id
+        in: path
+        description: Report Id
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+          format: int64
+          example: 1
+      responses:
+        "200":
+          description: Successfully deleted a report
+    options:
+      tags:
+      - Reports
+      summary: Retrieves information regarding interactions with reportsId
+      parameters:
+      - name: Id
+        in: path
+        description: Report Id
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+          format: int64
+          example: 1
+      responses:
+        "200":
+          description: Successfully retrieved options information
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ReportsOptionsId'
+    head:
+      tags:
+      - Reports
+      summary: Retrieves headers for a report
+      parameters:
+      - name: Id
+        in: path
+        description: Report Id
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+          format: int64
+          example: 1
+      responses:
+        "200":
+          description: Successfully retrieved list of reports
+    patch:
+      tags:
+      - Reports
+      summary: edit a report
+      parameters:
+      - name: Id
+        in: path
+        description: Report Id
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+          format: int64
+          example: 1
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReportsPatchRequest'
+        required: true
+      responses:
+        "200":
+          description: Successfully edited a report
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ReportsPatchResponse'
+  /appeals:
+    get:
+      tags:
+      - Appeals
+      summary: Get all of the current appeals
+      responses:
+        "200":
+          description: Successfully retrieved list of appeals
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Appeals'
+    post:
+      tags:
+      - Appeals
+      summary: Create an appeal
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AppealsPostRequest'
+        required: true
+      responses:
+        "201":
+          description: Appeal created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AppealsPostResponse'
+    options:
+      tags:
+      - Appeals
+      summary: Options
+      responses:
+        "200":
+          description: blah blah blah
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/AppealsOptions'
+    head:
+      tags:
+      - Appeals
+      summary: Retrieves headers for all appeals
+      responses:
+        "200":
+          description: Successfully retrieved list of appeals
+  /appeal/{Id}:
+    get:
+      tags:
+      - Appeals
+      summary: Get a specific appeal
+      parameters:
+      - name: Id
+        in: path
+        description: Appeal Id
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+          format: int64
+          example: 1
+      responses:
+        "200":
+          description: Successfully retrieved list of appeals
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/AppealId'
+    put:
+      tags:
+      - Appeals
+      summary: edit an appeal
+      parameters:
+      - name: Id
+        in: path
+        description: Appeal Id
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+          format: int64
+          example: 1
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AppealIdPut'
+        required: true
+      responses:
+        "200":
+          description: Successfully edited an appeal
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/AppealIdPut'
+    delete:
+      tags:
+      - Appeals
+      summary: deleting an appeal
+      parameters:
+      - name: Id
+        in: path
+        description: Appeal Id
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+          format: int64
+          example: 1
+      responses:
+        "200":
+          description: Successfully deleted an appeal
+    options:
+      tags:
+      - Appeals
+      summary: Retrieves information regarding interactions with appealsId
+      parameters:
+      - name: Id
+        in: path
+        description: Appeal Id
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+          format: int64
+          example: 1
+      responses:
+        "200":
+          description: Successfully retrieved options information
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/AppealsIdOptions'
+    head:
+      tags:
+      - Appeals
+      summary: Get the blah blah blah
+      parameters:
+      - name: Id
+        in: path
+        description: Appeal Id
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+          format: int64
+          example: 1
+      responses:
+        "200":
+          description: Successfully retrieved list of appeals
+    patch:
+      tags:
+      - Appeals
+      summary: edit an appeal
+      parameters:
+      - name: Id
+        in: path
+        description: Appeal Id
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+          format: int64
+          example: 1
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AppealIdPatchRequest'
+        required: true
+      responses:
+        "200":
+          description: Successfully edited an appeal
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/AppealIdPatchResponse'
+components:
+  schemas:
+    Announcement:
+      required:
+      - author
+      - title
+      - url
+      type: object
+      properties:
+        url:
+          type: string
+          example: http://comp3227.ecs.soton.ac.uk/announcements/1
+        title:
+          type: string
+          example: Sample item
+        author:
+          type: string
+          example: Prof Xin
+    AnnouncementOptions:
+      type: object
+      properties:
+        name:
+          type: string
+          example: Announcement List
+        description:
+          type: string
+          example: ""
+        renders:
+          type: array
+          example:
+          - application/json
+          - application/xml
+          - text/csv
+          items:
+            type: string
+        parses:
+          type: array
+          example:
+          - application/xml
+          - application/json
+          - text/csv
+          items:
+            type: string
+        action:
+          $ref: '#/components/schemas/AnnouncementOptions_action'
+    AnnouncementsPostRequest:
+      required:
+      - audience
+      - content
+      - title
+      - url
+      type: object
+      properties:
+        url:
+          type: object
+          example: http://comp3227.ecs.soton.ac.uk/announcements
+        title:
+          type: string
+          example: Trip has been cancelled
+        content:
+          type: string
+          example: The trip that we were all meant to go on has been cancelled but I am currently working with the University to see if we can reschedule the day instead. Will keep you all updated.
+        faculty:
+          type: object
+          example: http://comp3227.ecs.soton.ac.uk/faculties/1
+        courseByModule:
+          type: object
+          example: http://comp3227.ecs.soton.ac.uk/modules/8
+        courseByYearGroup:
+          type: integer
+          format: int64
+          example: 3
+        course:
+          type: object
+          example: http://comp3227.ecs.soton.ac.uk/courses/4
+        audience:
+          type: string
+          example: staff and students
+    AnnouncementsPostResponse:
+      required:
+      - audience
+      - content
+      - title
+      - url
+      type: object
+      properties:
+        url:
+          type: object
+          example: http://comp3227.ecs.soton.ac.uk/announcements/1
+        title:
+          type: string
+          example: Trip has been cancelled
+        content:
+          type: string
+          example: The trip that we were all meant to go on has been cancelled but I am currently working with the University to see if we can reschedule the day instead. Will keep you all updated.
+        faculty:
+          type: object
+          example: http://comp3227.ecs.soton.ac.uk/faculties/1
+        courseByModule:
+          type: object
+          example: http://comp3227.ecs.soton.ac.uk/modules/8
+        courseByYearGroup:
+          type: integer
+          format: int64
+          example: 3
+        course:
+          type: object
+          example: http://comp3227.ecs.soton.ac.uk/courses/4
+        audience:
+          type: string
+          example: staff and students
+    AnnouncementstIdPutRequest:
+      type: object
+      properties:
+        url:
+          type: string
+          example: http://comp3227.ecs.soton.ac.uk/announcements/1
+        title:
+          type: string
+          example: Trip is likely to be back on
+        content:
+          type: string
+          example: I have been given the heads up about the trip being on again. There are some final checks going on but it should be cleared completely within the next few days. Will update.
+        audience:
+          type: string
+          example: staff and students
+    AnnouncementsIdPutSuccessfulResponse:
+      type: object
+      properties:
+        url:
+          type: string
+          example: http://comp3227.ecs.soton.ac.uk/announcements/1
+        title:
+          type: string
+          example: Trip is likely to be back on
+        content:
+          type: string
+          example: I have been given the heads up about the trip being on again. There are some final checks going on but it should be cleared completely within the next few days. Will update.
+        faculty:
+          type: object
+          example: http://comp3227.ecs.soton.ac.uk/faculties/1
+        courseByModule:
+          type: object
+          example: http://comp3227.ecs.soton.ac.uk/modules/8
+        courseByYearGroup:
+          type: integer
+          format: int64
+          example: 3
+        course:
+          type: object
+          example: http://comp3227.ecs.soton.ac.uk/courses/4
+        audience:
+          type: string
+          example: staff and students
+    AnnouncementsIdPatchRequest:
+      type: object
+      properties:
+        title:
+          type: string
+          example: Trip has been delayed
+    AnnouncementsIdPatchResponse:
+      type: object
+      properties:
+        url:
+          type: string
+          example: http://comp3227.ecs.soton.ac.uk/announcements/1
+        title:
+          type: string
+          example: Trip has been delayed
+        content:
+          type: string
+          example: The trip that we were all meant to go on has been cancelled but I am currently working with the University to see if we can reschedule the day instead. Will keep you all updated.
+        faculty:
+          type: string
+          example: "Faculty 1, Arts and Humanities"
+        courseByModule:
+          type: string
+          example: "Module 8, Ancient Sources in Context"
+        courseByYearGroup:
+          type: integer
+          format: int64
+          example: 3
+        course:
+          type: string
+          example: "Course 4, Ancient History"
+        audience:
+          type: string
+          example: staff and students
+    AnnouncementsIdDeleteRequest:
+      type: object
+      properties:
+        url:
+          type: string
+          example: http://comp3227.ecs.soton.ac.uk/announcements/1
+    AnnouncementIdOptions:
+      type: object
+      properties:
+        name:
+          type: string
+          example: Announcement By Id
+        description:
+          type: string
+          example: ""
+        renders:
+          type: array
+          example:
+          - application/json
+          - application/xml
+          - text/csv
+          items:
+            type: string
+        parses:
+          type: array
+          example:
+          - application/xml
+          - application/json
+          - text/csv
+          items:
+            type: string
+        action:
+          $ref: '#/components/schemas/AnnouncementIdOptions_action'
+    Reports:
+      type: object
+      properties:
+        url:
+          type: object
+          example: http://comp3227.ecs.soton.ac.uk/reports/1
+        announcement:
+          type: object
+          example: http://comp3227.ecs.soton.ac.uk/announcements/3
+        user:
+          type: string
+          example: Arjan Sehra
+    ReportsPostRequest:
+      required:
+      - announcement
+      - reason
+      - url
+      - user
+      type: object
+      properties:
+        url:
+          type: object
+          example: http://comp3227.ecs.soton.ac.uk/reports
+        announcement:
+          type: object
+          example: http://comp3227.ecs.soton.ac.uk/announcements/3
+        reason:
+          type: string
+          example: This announcement has been spammed by this same person for over a week.
+        user:
+          type: string
+          example: Arjan Sehra (as9e20)
+    ReportsPostResponse:
+      required:
+      - announcement
+      - reason
+      - url
+      - user
+      type: object
+      properties:
+        url:
+          type: object
+          example: http://comp3227.ecs.soton.ac.uk/reports/3
+        announcement:
+          type: object
+          example: http://comp3227.ecs.soton.ac.uk/announcements/3
+        reason:
+          type: string
+          example: This announcement has been spammed by this same person for over a week.
+        user:
+          type: string
+          example: Arjan Sehra (as9e20)
+    ReportsPut:
+      required:
+      - announcement
+      - reason
+      - url
+      - user
+      type: object
+      properties:
+        url:
+          type: object
+          example: http://comp3227.ecs.soton.ac.uk/reports/1
+        announcement:
+          type: object
+          example: http://comp3227.ecs.soton.ac.uk/announcements/3
+        reason:
+          type: string
+          example: This user has not only mentioned a particular word that should not have been said but has failed to acknowledge this behaviour is not on. Further action may need to be taken regarding this student.
+        user:
+          type: string
+          example: Arjan Sehra (as9e20)
+    ReportsPatchRequest:
+      type: object
+      properties:
+        user:
+          type: string
+          example: Arjan Sehra (as9e20) and Matt Smith (ms1n20)
+    ReportsPatchResponse:
+      type: object
+      properties:
+        url:
+          type: object
+          example: http://comp3227.ecs.soton.ac.uk/reports/1
+        announcement:
+          type: object
+          example: http://comp3227.ecs.soton.ac.uk/announcements/3
+        reason:
+          type: string
+          example: This user has not only mentioned a particular word that should not have been said but has failed to acknowledge this behaviour is not on. Further action may need to be taken regarding this student.
+        user:
+          type: string
+          example: Arjan Sehra (as9e20) and Matt Smith (ms1n20)
+    ReportsOptions:
+      type: object
+      properties:
+        name:
+          type: string
+          example: Reports
+        description:
+          type: string
+          example: ""
+        renders:
+          type: array
+          example:
+          - application/json
+          - application/xml
+          - text/csv
+          items:
+            type: string
+        parses:
+          type: array
+          example:
+          - application/xml
+          - application/json
+          - text/csv
+          items:
+            type: string
+        action:
+          $ref: '#/components/schemas/ReportsOptions_action'
+    ReportId:
+      required:
+      - announcement
+      - reason
+      - url
+      - user
+      type: object
+      properties:
+        url:
+          type: object
+          example: http://comp3227.ecs.soton.ac.uk/reports/1
+        announcement:
+          type: object
+          example: http://comp3227.ecs.soton.ac.uk/announcements/3
+        reason:
+          type: string
+          example: This user has mentioned a particular word that should not have been said
+        user:
+          type: string
+          example: Arjan Sehra (as9e20)
+    ReportsOptionsId:
+      type: object
+      properties:
+        name:
+          type: string
+          example: Reports By Id
+        description:
+          type: string
+          example: ""
+        renders:
+          type: array
+          example:
+          - application/json
+          - application/xml
+          - text/csv
+          items:
+            type: string
+        parses:
+          type: array
+          example:
+          - application/xml
+          - application/json
+          - text/csv
+          items:
+            type: string
+        action:
+          $ref: '#/components/schemas/ReportsOptionsId_action'
+    Appeals:
+      type: object
+      properties:
+        url:
+          type: object
+          example: http://comp3227.ecs.soton.ac.uk/appeals/1
+        reportUrl:
+          type: object
+          example: http://comp3227.ecs.soton.ac.uk/reports/1
+    AppealId:
+      required:
+      - name
+      type: object
+      properties:
+        url:
+          type: object
+          example: http://comp3227.ecs.soton.ac.uk/appeals/1
+        reportUrl:
+          type: object
+          example: http://comp3227.ecs.soton.ac.uk/reports/1
+        reason:
+          type: string
+          example: My phone autocorrected to that particular word. It won't happen again
+        name:
+          type: string
+          example: Arjan Sehra (as9e20)
+    AnnouncementParameter:
+      required:
+      - number
+      type: integer
+      properties:
+        number:
+          type: integer
+          format: int64
+          example: 1
+    AppealsPostRequest:
+      type: object
+      properties:
+        url:
+          type: object
+          example: http://comp3227.ecs.soton.ac.uk/appeals
+        reportUrl:
+          type: object
+          example: http://comp3227.ecs.soton.ac.uk/reports/3
+        reason:
+          type: string
+          example: Someone managed to get access to my password and that announcement was not me.
+        name:
+          type: string
+          example: Arjan Sehra (as9e20)
+    AppealsPostResponse:
+      type: object
+      properties:
+        url:
+          type: object
+          example: http://comp3227.ecs.soton.ac.uk/appeals/5
+        reportUrl:
+          type: object
+          example: http://comp3227.ecs.soton.ac.uk/reports/3
+        reason:
+          type: string
+          example: Someone managed to get access to my password and that announcement was not me.
+        name:
+          type: string
+          example: Arjan Sehra (as9e20)
+    AppealsOptions:
+      type: object
+      properties:
+        name:
+          type: string
+          example: Appeals
+        description:
+          type: string
+          example: ""
+        renders:
+          type: array
+          example:
+          - application/json
+          - application/xml
+          - text/csv
+          items:
+            type: string
+        parses:
+          type: array
+          example:
+          - application/xml
+          - application/json
+          - text/csv
+          items:
+            type: string
+        action:
+          $ref: '#/components/schemas/AppealsOptions_action'
+    AppealIdPut:
+      type: object
+      properties:
+        url:
+          type: object
+          example: http://comp3227.ecs.soton.ac.uk/appeals/1
+        reportUrl:
+          type: object
+          example: http://comp3227.ecs.soton.ac.uk/reports/1
+        reason:
+          type: string
+          example: "My phone autocorrected to that particular word and I did not double check, which is partially my own fault but this was never meant to be posted. Apologies."
+        name:
+          type: string
+          example: Arjan Sehra (as9e20)
+    AppealIdPatchRequest:
+      type: object
+      properties:
+        name:
+          type: string
+          example: Arjan Sehra (as9e20) and Peter Jones (pj9a20)
+    AppealIdPatchResponse:
+      type: object
+      properties:
+        url:
+          type: object
+          example: http://comp3227.ecs.soton.ac.uk/appeals/1
+        reportUrl:
+          type: object
+          example: http://comp3227.ecs.soton.ac.uk/reports/1
+        reason:
+          type: string
+          example: "My phone autocorrected to that particular word and I did not double check, which is partially my own fault but this was never meant to be posted. Apologies."
+        name:
+          type: string
+          example: Arjan Sehra (as9e20) and Peter Jones (pj9a20)
+    AppealsIdOptions:
+      type: object
+      properties:
+        name:
+          type: string
+          example: Appeals By Id
+        description:
+          type: string
+          example: ""
+        renders:
+          type: array
+          example:
+          - application/json
+          - application/xml
+          - text/csv
+          items:
+            type: string
+        parses:
+          type: array
+          example:
+          - application/xml
+          - application/json
+          - text/csv
+          items:
+            type: string
+        action:
+          $ref: '#/components/schemas/AppealsIdOptions_action'
+    AnnouncementOptions_action_POST_url:
+      type: object
+      properties:
+        type:
+          type: string
+          example: field
+        required:
+          type: boolean
+          example: true
+        read_only:
+          type: boolean
+          example: true
+        label:
+          type: string
+          example: Url
+    AnnouncementOptions_action_POST_title:
+      type: object
+      properties:
+        type:
+          type: string
+          example: string
+        required:
+          type: boolean
+          example: true
+        read_only:
+          type: boolean
+          example: true
+        label:
+          type: string
+          example: Title
+        max_length:
+          type: integer
+          format: int64
+          example: 200
+    AnnouncementOptions_action_POST_content:
+      type: object
+      properties:
+        type:
+          type: string
+          example: string
+        required:
+          type: boolean
+          example: true
+        read_only:
+          type: boolean
+          example: true
+        label:
+          type: string
+          example: Content
+        max_length:
+          type: integer
+          format: int64
+          example: 200
+    AnnouncementOptions_action_POST_faculty:
+      type: object
+      properties:
+        type:
+          type: string
+          example: field
+        required:
+          type: boolean
+          example: false
+        read_only:
+          type: boolean
+          example: false
+        label:
+          type: string
+          example: Faculty
+    AnnouncementOptions_action_POST_courseByModule:
+      type: object
+      properties:
+        type:
+          type: string
+          example: module
+        required:
+          type: boolean
+          example: false
+        read_only:
+          type: boolean
+          example: false
+        label:
+          type: string
+          example: Module
+    AnnouncementOptions_action_POST_courseByYearGroup:
+      type: object
+      properties:
+        type:
+          type: string
+          example: field
+        required:
+          type: boolean
+          example: false
+        read_only:
+          type: boolean
+          example: false
+        label:
+          type: string
+          example: courseByYearGroup
+    AnnouncementOptions_action_POST_course:
+      type: object
+      properties:
+        type:
+          type: string
+          example: field
+        required:
+          type: boolean
+          example: false
+        read_only:
+          type: boolean
+          example: false
+        label:
+          type: string
+          example: Course
+    AnnouncementOptions_action_POST_audience:
+      type: object
+      properties:
+        type:
+          type: string
+          example: string
+        required:
+          type: boolean
+          example: true
+        read_only:
+          type: boolean
+          example: true
+        label:
+          type: string
+          example: Audience
+    AnnouncementOptions_action_POST:
+      type: object
+      properties:
+        url:
+          $ref: '#/components/schemas/AnnouncementOptions_action_POST_url'
+        title:
+          $ref: '#/components/schemas/AnnouncementOptions_action_POST_title'
+        content:
+          $ref: '#/components/schemas/AnnouncementOptions_action_POST_content'
+        faculty:
+          $ref: '#/components/schemas/AnnouncementOptions_action_POST_faculty'
+        courseByModule:
+          $ref: '#/components/schemas/AnnouncementOptions_action_POST_courseByModule'
+        courseByYearGroup:
+          $ref: '#/components/schemas/AnnouncementOptions_action_POST_courseByYearGroup'
+        course:
+          $ref: '#/components/schemas/AnnouncementOptions_action_POST_course'
+        audience:
+          $ref: '#/components/schemas/AnnouncementOptions_action_POST_audience'
+    AnnouncementOptions_action:
+      type: object
+      properties:
+        POST:
+          $ref: '#/components/schemas/AnnouncementOptions_action_POST'
+    AnnouncementIdOptions_action:
+      type: object
+      properties:
+        PUT:
+          $ref: '#/components/schemas/AnnouncementOptions_action_POST'
+    ReportsOptions_action_POST_announcement:
+      type: object
+      properties:
+        type:
+          type: string
+          example: field
+        required:
+          type: boolean
+          example: true
+        read_only:
+          type: boolean
+          example: true
+        label:
+          type: string
+          example: Announcement
+    ReportsOptions_action_POST_reason:
+      type: object
+      properties:
+        type:
+          type: string
+          example: string
+        required:
+          type: boolean
+          example: true
+        read_only:
+          type: boolean
+          example: true
+        label:
+          type: string
+          example: Reason
+        max_length:
+          type: integer
+          format: int64
+          example: 200
+    ReportsOptions_action_POST_user:
+      type: object
+      properties:
+        type:
+          type: string
+          example: string
+        required:
+          type: boolean
+          example: true
+        read_only:
+          type: boolean
+          example: true
+        label:
+          type: string
+          example: User
+        max_length:
+          type: integer
+          format: int64
+          example: 200
+    ReportsOptions_action_POST:
+      type: object
+      properties:
+        url:
+          $ref: '#/components/schemas/AnnouncementOptions_action_POST_url'
+        announcement:
+          $ref: '#/components/schemas/ReportsOptions_action_POST_announcement'
+        reason:
+          $ref: '#/components/schemas/ReportsOptions_action_POST_reason'
+        user:
+          $ref: '#/components/schemas/ReportsOptions_action_POST_user'
+    ReportsOptions_action:
+      type: object
+      properties:
+        POST:
+          $ref: '#/components/schemas/ReportsOptions_action_POST'
+    ReportsOptionsId_action:
+      type: object
+      properties:
+        PUT:
+          $ref: '#/components/schemas/ReportsOptions_action_POST'
+    AppealsOptions_action_POST_reportUrl:
+      type: object
+      properties:
+        type:
+          type: string
+          example: field
+        required:
+          type: boolean
+          example: true
+        read_only:
+          type: boolean
+          example: true
+        label:
+          type: string
+          example: ReportUrl
+    AppealsOptions_action_POST_name:
+      type: object
+      properties:
+        type:
+          type: string
+          example: string
+        required:
+          type: boolean
+          example: true
+        read_only:
+          type: boolean
+          example: true
+        label:
+          type: string
+          example: Name
+        max_length:
+          type: integer
+          format: int64
+          example: 200
+    AppealsOptions_action_POST:
+      type: object
+      properties:
+        url:
+          $ref: '#/components/schemas/AnnouncementOptions_action_POST_url'
+        reportUrl:
+          $ref: '#/components/schemas/AppealsOptions_action_POST_reportUrl'
+        reason:
+          $ref: '#/components/schemas/ReportsOptions_action_POST_reason'
+        name:
+          $ref: '#/components/schemas/AppealsOptions_action_POST_name'
+    AppealsOptions_action:
+      type: object
+      properties:
+        POST:
+          $ref: '#/components/schemas/AppealsOptions_action_POST'
+    AppealsIdOptions_action:
+      type: object
+      properties:
+        PUT:
+          $ref: '#/components/schemas/AppealsOptions_action_POST'

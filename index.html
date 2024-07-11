@@ -1,0 +1,1997 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>API Documentation</title>
+</head>
+
+<head>
+    <meta name="ad.size" content="width=300, height=250">
+    <script type="text/javascript">
+    var clickTag = "http://www.google.co.uk"; </script>
+</head>
+<body>
+
+<div class="container">
+    <div class="sidebar">
+        <div class="dropdown">
+            <button class="dropbtn">MODULES
+            </button>
+            <div class="dropdown-content">
+                <a href="#GETMODULES">GET /modules</a>
+                <a href="#POSTMODULE">POST /modules</a>
+                <a href="#HEADMODULES">HEAD /module</a>
+                <a href="#OPTIONSMODULES">OPTIONS /modules</a>
+                <a href="#GETMODULE">GET /modules/{moduleId}</a>
+                <a href="#HEADMODULE">HEAD /modules/{moduleId}</a>
+                <a href="#PUTMODULE">PUT /modules/{moduleId}</a>
+                <a href="#PATCHMODULE">PATCH /modules/{moduleId}</a>
+                <a href="#DELETEMODULE">DELETE /modules/{moduleId}</a>
+                <a href="#OPTIONSMODULE">OPTIONS /modules/{moduleId}</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <button class="dropbtn">FACULTIES</button>
+            <div class="dropdown-content">
+                <a href="#GETFACULTIES">GET /faculties</a>
+                <a href="#HEADFACULTIES">HEAD /faculties</a>
+                <a href="#OPTIONSFACULTIES">OPTIONS /faculties</a>
+                <a href="#GETFACULTY">GET /faculties/{facultyId}</a>
+                <a href="#HEADFACULTY">HEAD /faculties/{facultyId}</a>
+                <a href="#OPTIONSFACULTY">OPTIONS /faculties/{facultyId}</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <button class="dropbtn">COURSES</button>
+            <div class="dropdown-content">
+                <a href="#GETCOURSES">GET /courses</a>
+                <a href="#HEADCOURSES">HEAD /courses</a>
+                <a href="#OPTIONSCOURSES">OPTIONS /courses</a>
+                <a href="#GETCOURSE">GET /course/{courseId}</a>
+                <a href="#HEADCOURSE">HEAD /course/{courseId}</a>
+                <a href="#OPTIONSCOURSE">OPTIONS /course/{courseId}</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <p> 
+            <ht class="basic-title">URI template: http://comp3227.ecs.soton.ac.uk/modules</ht> <br>
+            <br>
+            The purpose of this endpoint is to allow the user to retrieve the url, name and code of each module.
+            <br>
+
+            <br>
+            In this URI template, there is only one parameter: {moduleId}
+            <br>
+            This parameter ONLY takes an integer.
+            <br>
+        </p>
+
+        <p>
+            The following HTTP methods can be used: <br>
+            <ul>
+                <li>GET</li>
+                <li>POST</li>
+                <li>HEAD</li>
+                <li>OPTIONS</li>
+            </ul>
+        </p>
+
+        <div id="GETMODULES"></div>
+        <p></p>> <ht class="basic-title">GET http://comp3227.ecs.soton.ac.uk/modules</ht>
+        <br> <ht class="basic-subtitle">Example Request</ht>
+        <br>
+        GET http://comp3227.ecs.soton.ac.uk/modules
+        <br> <br>
+        <ht class="basic-subtitle">Example Response</ht>
+        <br> <br> <ht class="basic-subtitle">Headers:</ht>
+        <br> <br>
+
+        <table>
+            <tr>
+                <th>Key</th>
+                <th>Value</th>
+            </tr>
+            <tr>
+                <td>Server</td>
+                <td>nginx/1.20.1</td>
+            </tr>
+            <tr>
+                <td>Date</td>
+                <td>Mon, 27 Nov 2023 19:32:58 GMT</td>
+            </tr>
+            <tr>
+                <td>Content-Type</td>
+                <td>application/json</td>
+            </tr>
+            <tr>
+                <td>Content-Length</td>
+                <td>51126</td>
+            </tr>
+            <tr>
+                <td>Connection</td>
+                <td>keep-alive</td>
+            </tr>
+            <tr>
+                <td>Vary</td>
+                <td>Accept</td>
+            </tr>
+            <tr>
+                <td>Allow</td>
+                <td>GET, POST, HEAD, OPTIONS</td>
+            </tr>
+            <tr>
+                <td>X-Frame-Options</td>
+                <td>DENY</td>
+            </tr>
+            <tr>
+                <td>X-Content-Type-Options</td>
+                <td>nosniff</td>
+            </tr>
+            <tr>
+                <td>Referrer-Policy</td>
+                <td>same-origin</td>
+            </tr>
+        </table>
+
+        <br> <br>
+        <ht class="basic-subtitle">Body:</ht>
+        <br> <br>
+        
+        <pre>
+            <span class="punctuation">[</span>
+                <span class="punctuation">{</span>
+                    <span class="key">"url"</span>: <span class="string">"http://comp3227.ecs.soton.ac.uk/modules/1"</span>,
+                    <span class="key">"name"</span>: <span class="string">"Acoustics 1"</span>,
+                    <span class="key">"code"</span>: <span class="string">"ISVR1032"</span>
+                <span class="punctuation">},</span>
+                <span class="punctuation">{</span>
+                    <span class="key">"url"</span>: <span class="string">"http://comp3227.ecs.soton.ac.uk/modules/2"</span>,
+                    <span class="key">"name"</span>: <span class="string">"Audio and Signal Processing"</span>,
+                    <span class="key">"code"</span>: <span class="string">"ISVR2041"</span>
+                <span class="punctuation">},</span>
+                <span class="punctuation">{</span>
+                    <span class="key">"url"</span>: <span class="string">"http://comp3227.ecs.soton.ac.uk/modules/3"</span>,
+                    <span class="key">"name"</span>: <span class="string">"Mathematics for Engineering and the Environment"</span>,
+                    <span class="key">"code"</span>: <span class="string">"Math1054"</span>
+                <span class="punctuation">},</span>
+            <span class="string">...</span>
+            <span class="punctuation">]</span>
+        </pre>
+
+
+        <div id="POSTMODULE"></div>
+        <p></p>> <ht class="basic-title">POST http://comp3227.ecs.soton.ac.uk/modules</ht>
+        <br> <ht class="basic-subtitle">Example Request</ht>
+        <br> 
+        POST http://comp3227.ecs.soton.ac.uk/modules
+        <br>
+        <ht class="basic-subtitle">Headers</ht>
+        <br>
+        <table>
+            <tr>
+                <th>Authorization</th>
+                <td>Token ...</td>
+            </tr>
+        </table>
+        <br>
+
+        Body:
+        <pre>
+            <span class="punctuation">{</span>
+                <span class="key">"url"</span>: <span class="string">"http://comp3227.ecs.soton.ac.uk/modules/352"</span>,
+                <span class="key">"name"</span>: <span class="string">"Center Back"</span>,
+                <span class="key">"code"</span>: <span class="string">"CB3"</span>,
+                <span class="key">"year"</span>: <span class="number">2</span>,
+                <span class="key">"semester"</span>: <span class="number">2</span>,
+                <span class="key">"courses"</span>: <span class="punctuation">[</span>
+                    <span class="string">"http://comp3227.ecs.soton.ac.uk/courses/10"</span>
+                <span class="punctuation">]</span>,
+                <span class="key">"faculty"</span>: <span class="string">"http://comp3227.ecs.soton.ac.uk/faculties/5"</span>
+            <span class="punctuation">}</span>
+        </pre>
+
+        <br>
+        <ht class="basic-subtitle">Example Response</ht>
+        <br> <br>
+
+        <table>
+            <tr>
+                <th>Key</th>
+                <th>Value</th>
+            </tr>
+            <tr>
+                <td>Server</td>
+                <td>nginx/1.20.1</td>
+            </tr>
+            <tr>
+                <td>Date</td>
+                <td>Mon, 27 Nov 2023 16:32:21 GMT</td>
+            </tr>
+            <tr>
+                <td>Content-Type</td>
+                <td>application/json</td>
+            </tr>
+            <tr>
+                <td>Content-Length</td>
+                <td>280</td>
+            </tr>
+            <tr>
+                <td>Connection</td>
+                <td>keep-alive</td>
+            </tr>
+            <tr>
+                <td>Location</td>
+                <td>http://comp3227.ecs.soton.ac.uk/modules637</td>
+            </tr>
+            <tr>
+                <td>Vary</td>
+                <td>Accept</td>
+            </tr>
+            <tr>
+                <td>Allow</td>
+                <td>GET, POST, HEAD, OPTIONS</td>
+            </tr>
+            <tr>
+                <td>X-Frame-Options</td>
+                <td>DENY</td>
+            </tr>
+            <tr>
+                <td>X-Content-Type-Options</td>
+                <td>nosniff</td>
+            </tr>
+            <tr>
+                <td>Referrer-Policy</td>
+                <td>same-origin</td>
+            </tr>
+        </table>
+
+        <br>
+
+        <pre>
+            <span class="punctuation">{</span>
+                <span class="key">"url"</span>: <span class="string">"http://comp3227.ecs.soton.ac.uk/modules/352"</span>,
+                <span class="key">"name"</span>: <span class="string">"Center Back"</span>,
+                <span class="key">"code"</span>: <span class="string">"CB3"</span>,
+                <span class="key">"year"</span>: <span class="number">2</span>,
+                <span class="key">"semester"</span>: <span class="number">2</span>,
+                <span class="key">"courses"</span>: <span class="punctuation">[</span>
+                    <span class="string">"http://comp3227.ecs.soton.ac.uk/courses/10"</span>
+                <span class="punctuation">]</span>,
+                <span class="key">"faculty"</span>: <span class="string">"http://comp3227.ecs.soton.ac.uk/faculties/5"</span>
+            <span class="punctuation">}</span>
+        </pre>
+
+        <div id="HEADMODULES"></div>
+        <p></p>> <ht class="basic-title">HEAD http://comp3227.ecs.soton.ac.uk/modules</ht>
+
+        <br> <ht class="basic-subtitle">Example Request</ht>
+        <br> 
+        HEAD http://comp3227.ecs.soton.ac.uk/modules
+        <br> <br>
+
+        <br> <ht class="basic-subtitle">Example Response</ht>
+        <br> 
+
+        <br>
+        <table>
+            <tr>
+                <th>Key</th>
+                <th>Value</th>
+            </tr>
+            <tr>
+                <td>Server</td>
+                <td>nginx/1.20.1</td>
+            </tr>
+            <tr>
+                <td>Date</td>
+                <td>Mon, 27 Nov 2023 19:33:50 GMT</td>
+            </tr>
+            <tr>
+                <td>Content-Type</td>
+                <td>application/json</td>
+            </tr>
+            <tr>
+                <td>Content-Length</td>
+                <td>113988</td>
+            </tr>
+            <tr>
+                <td>Connection</td>
+                <td>keep-alive</td>
+            </tr>
+            <tr>
+                <td>Vary</td>
+                <td>Accept</td>
+            </tr>
+            <tr>
+                <td>Allow</td>
+                <td>GET, POST, HEAD, OPTIONS</td>
+            </tr>
+            <tr>
+                <td>X-Frame-Options</td>
+                <td>DENY</td>
+            </tr>
+            <tr>
+                <td>X-Content-Type-Options</td>
+                <td>nosniff</td>
+            </tr>
+            <tr>
+                <td>Referrer-Policy</td>
+                <td>same-origin</td>
+            </tr>
+        </table>
+
+        <br> <br>
+        
+        <div id="OPTIONSMODULES"></div>
+        <p></p>> <ht class="basic-title">OPTIONS http://comp3227.ecs.soton.ac.uk/modules</ht>
+
+        <br> <br> <ht class="basic-subtitle">Example Request</ht>
+        <br> 
+        OPTIONS http://comp3227.ecs.soton.ac.uk/modules
+        <br> <br>
+        <br> <ht class="basic-subtitle">Example Response</ht>
+        <br> 
+
+        <br> <br> <ht class="basic-subtitle">Headers:</ht>
+        <br> <br>
+
+        <table>
+            <tr>
+                <th>Key</th>
+                <th>Value</th>
+            </tr>
+            <tr>
+                <td>Server</td>
+                <td>nginx/1.20.1</td>
+            </tr>
+            <tr>
+                <td>Date</td>
+                <td>Mon, 27 Nov 2023 19:35:01 GMT</td>
+            </tr>
+            <tr>
+                <td>Content-Type</td>
+                <td>application/json</td>
+            </tr>
+            <tr>
+                <td>Content-Length</td>
+                <td>1727</td>
+            </tr>
+            <tr>
+                <td>Connection</td>
+                <td>keep-alive</td>
+            </tr>
+            <tr>
+                <td>Vary</td>
+                <td>Accept</td>
+            </tr>
+            <tr>
+                <td>Allow</td>
+                <td>GET, POST, HEAD, OPTIONS</td>
+            </tr>
+            <tr>
+                <td>X-Frame-Options</td>
+                <td>DENY</td>
+            </tr>
+            <tr>
+                <td>X-Content-Type-Options</td>
+                <td>nosniff</td>
+            </tr>
+            <tr>
+                <td>Referrer-Policy</td>
+                <td>same-origin</td>
+            </tr>
+        </table>
+
+        <br> <br> <ht class="basic-subtitle">Body:</ht> <br> <br>
+
+        <pre>
+            <span class="punctuation">{</span>
+                <span class="key">"name"</span>: <span class="string">"Module List"</span>,
+                <span class="key">"description"</span>: <span class="string">""</span>,
+                <span class="key">"renders"</span>: <span class="punctuation">[</span>
+                    <span class="string">"application/json"</span>,
+                    <span class="string">"application/xml"</span>,
+                    <span class="string">"text/csv"</span>
+                <span class="punctuation">]</span>,
+                <span class="key">"parses"</span>: <span class="punctuation">[</span>
+                    <span class="string">"application/xml"</span>,
+                    <span class="string">"application/json"</span>,
+                    <span class="string">"text/csv"</span>
+                <span class="punctuation">]</span>
+            <span class="punctuation">}</span>
+        </pre>
+
+        <br> <br>
+
+        <p> 
+            <ht class="basic-title">URI template: http://comp3227.ecs.soton.ac.uk/modules/{moduleId}</ht>
+            <br>
+            The purpose of this endpoint is to allow the user to retrieve each module but in more detail, as well as change information about their own modules.
+            <br>
+            <br>
+
+            <br>
+            In this URI template, there is only one parameter: {moduleId}
+            <br>
+            This parameter ONLY takes an integer.
+            <br>
+        </p>
+
+        <p>
+            The following HTTP methods can be used: <br>
+            <ul>
+                <li>GET</li>
+                <li>HEAD</li>
+                <li>PUT</li>
+                <li>PATCH</li>
+                <li>DELETE</li>
+                <li>OPTIONS</li>
+            </ul>
+        </p>
+
+
+        <div id="GETMODULE"></div>
+        <p></p>> <ht class="basic-title">GET http://comp3227.ecs.soton.ac.uk/modules/{moduleId}</ht>
+        <br> <ht class="basic-subtitle">Example Request</ht>
+        <br>
+        GET http://comp3227.ecs.soton.ac.uk/modules/15
+        <br> <br>
+        <ht class="basic-subtitle">Example Response</ht>
+        <br> <br>
+
+        <br> <br> <ht class="basic-subtitle">Headers:</ht>
+        <br> <br>
+
+        <table>
+            <tr>
+                <th>Key</th>
+                <th>Value</th>
+            </tr>
+            <tr>
+                <td>Server</td>
+                <td>nginx/1.20.1</td>
+            </tr>
+            <tr>
+                <td>Date</td>
+                <td>Mon, 27 Nov 2023 19:38:15 GMT</td>
+            </tr>
+            <tr>
+                <td>Content-Type</td>
+                <td>application/json</td>
+            </tr>
+            <tr>
+                <td>Content-Length</td>
+                <td>315</td>
+            </tr>
+            <tr>
+                <td>Connection</td>
+                <td>keep-alive</td>
+            </tr>
+            <tr>
+                <td>Vary</td>
+                <td>Accept</td>
+            </tr>
+            <tr>
+                <td>Allow</td>
+                <td>GET, PUT, PATCH, DELETE, HEAD, OPTIONS</td>
+            </tr>
+            <tr>
+                <td>X-Frame-Options</td>
+                <td>DENY</td>
+            </tr>
+            <tr>
+                <td>X-Content-Type-Options</td>
+                <td>nosniff</td>
+            </tr>
+            <tr>
+                <td>Referrer-Policy</td>
+                <td>same-origin</td>
+            </tr>
+        </table>
+
+        <br> <br> <ht class="basic-subtitle">Body:</ht> <br> <br>
+
+        <pre>
+            <span class="punctuation">{</span>
+                <span class="key">"url"</span>: <span class="string">"http://comp3227.ecs.soton.ac.uk/modules/15"</span>,
+                <span class="key">"name"</span>: <span class="string">"Web Architecture and Hypertext Technologies"</span>,
+                <span class="key">"code"</span>: <span class="string">"COMP3227"</span>,
+                <span class="key">"year"</span>: <span class="number">3</span>,
+                <span class="key">"semester"</span>: <span class="number">1</span>,
+                <span class="key">"courses"</span>: <span class="punctuation">[</span>
+                    <span class="string">"http://comp3227.ecs.soton.ac.uk/courses/8"</span>
+                <span class="punctuation">]</span>,
+                <span class="key">"faculty"</span>: <span class="string">"http://comp3227.ecs.soton.ac.uk/faculties/2"</span>
+            <span class="punctuation">}</span>
+        </pre>
+
+        <div id="HEADMODULE"></div>
+        <p></p>> <ht class="basic-title">HEAD http://comp3227.ecs.soton.ac.uk/modules/{moduleId}</ht>
+        <br> <ht class="basic-subtitle">Example Request</ht>
+        <br>
+        HEAD http://comp3227.ecs.soton.ac.uk/modules/15
+        <br> <br>
+
+        <br> <ht class="basic-subtitle">Example Response</ht>
+        <br>
+        <br> <ht class="basic-subtitle">Headers:</ht>
+        <br>
+
+        <br>
+        <table>
+            <tr>
+                <th>Key</th>
+                <th>Value</th>
+            </tr>
+            <tr>
+                <td>Server</td>
+                <td>nginx/1.20.1</td>
+            </tr>
+            <tr>
+                <td>Date</td>
+                <td>Mon, 27 Nov 2023 19:39:58 GMT</td>
+            </tr>
+            <tr>
+                <td>Content-Type</td>
+                <td>application/json</td>
+            </tr>
+            <tr>
+                <td>Content-Length</td>
+                <td>32713</td>
+            </tr>
+            <tr>
+                <td>Connection</td>
+                <td>keep-alive</td>
+            </tr>
+            <tr>
+                <td>Vary</td>
+                <td>Accept</td>
+            </tr>
+            <tr>
+                <td>Allow</td>
+                <td>GET, POST, HEAD, OPTIONS</td>
+            </tr>
+            <tr>
+                <td>X-Frame-Options</td>
+                <td>DENY</td>
+            </tr>
+            <tr>
+                <td>X-Content-Type-Options</td>
+                <td>nosniff</td>
+            </tr>
+            <tr>
+                <td>Referrer-Policy</td>
+                <td>same-origin</td>
+            </tr>
+        </table>
+        <br> <br>
+
+        <div id="PUTMODULE"></div>
+        <p></p>> <ht class="basic-title">PUT http://comp3227.ecs.soton.ac.uk/modules/{moduleId}</ht>
+
+        <br>
+        <table>
+            <tr>
+                <th>Key</th>
+                <th>Required</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>url</td>
+                <td>optional</td>
+                <td>Url contains the specific module you wish to edit</td>
+            </tr>
+            <tr>
+                <td>name</td>
+                <td>required</td>
+                <td>Name of the module</td>
+            </tr>
+            <tr>
+                <td>code</td>
+                <td>required</td>
+                <td>Code of the module</td>
+            </tr>
+            <tr>
+                <td>year</td>
+                <td>optional</td>
+                <td>Year the module is studied in</td>
+            </tr>
+            <tr>
+                <td>semester</td>
+                <td>optional</td>
+                <td>Semester the module is studied in</td>
+            </tr>
+            <tr>
+                <td>courses</td>
+                <td>optional</td>
+                <td>List of courses this module belongs to</td>
+            </tr>
+            <tr>
+                <td>faculty</td>
+                <td>required</td>
+                <td>The faculty the module belongs to</td>
+            </tr>
+        </table>
+        <br> <br>
+
+        <br> <ht class="basic-subtitle">Example Request</ht>
+        <br>
+        PUT http://comp3227.ecs.soton.ac.uk/modules/283
+        <br> <br> 
+
+        <ht class="basic-subtitle">Headers:</ht>
+        <br> <br>
+
+        <table>
+            <tr>
+                <th>Authorization</th>
+                <td>Token ...</td>
+            </tr>
+        </table>
+
+        <br> <br>
+        <ht class="basic-subtitle">Body:</ht>
+        <br> <br>
+        <pre>
+            <span class="punctuation">{</span>
+                <span class="key">"name"</span>: <span class="string">"Center Back For The Win"</span>,
+                <span class="key">"code"</span>: <span class="string">"CB3"</span>,
+                <span class="key">"faculty"</span>: <span class="string">"http://comp3227.ecs.soton.ac.uk/faculties/5"</span>
+            <span class="punctuation">}</span>
+        </pre>
+
+        <ht class="basic-subtitle">Example Response</ht> <br> <br>
+
+        <br> <br> <ht class="basic-subtitle">Headers:</ht>
+        <br> <br>
+
+        <table>
+            <tr>
+                <th>Key</th>
+                <th>Value</th>
+            </tr>
+            <tr>
+                <td>Server</td>
+                <td>nginx/1.20.1</td>
+            </tr>
+            <tr>
+                <td>Date</td>
+                <td>Mon, 27 Nov 2023 19:40:35 GMT</td>
+            </tr>
+            <tr>
+                <td>Content-Type</td>
+                <td>application/json</td>
+            </tr>
+            <tr>
+                <td>Content-Length</td>
+                <td>292</td>
+            </tr>
+            <tr>
+                <td>Connection</td>
+                <td>keep-alive</td>
+            </tr>
+            <tr>
+                <td>Vary</td>
+                <td>Accept</td>
+            </tr>
+            <tr>
+                <td>Allow</td>
+                <td>GET, PUT, PATCH, DELETE, HEAD OPTIONS</td>
+            </tr>
+            <tr>
+                <td>X-Frame-Options</td>
+                <td>DENY</td>
+            </tr>
+            <tr>
+                <td>X-Content-Type-Options</td>
+                <td>nosniff</td>
+            </tr>
+            <tr>
+                <td>Referrer-Policy</td>
+                <td>same-origin</td>
+            </tr>
+        </table>
+
+        <ht class="basic-subtitle">Body:</ht>
+        <pre>
+            <span class="punctuation">{</span>
+                <span class="key">"url"</span>: <span class="string">"http://comp3227.ecs.soton.ac.uk/modules/283"</span>,
+                <span class="key">"name"</span>: <span class="string">"Center Back For The Win"</span>,
+                <span class="key">"code"</span>: <span class="string">"CB3"</span>,
+                <span class="key">"year"</span>: <span class="integer">2</span>,
+                <span class="key">"semester"</span>: <span class="integer">2</span>,
+                <span class="key">"courses"</span>: <span class="punctuation">[</span>
+                    <span class="string">"http://comp3227.ecs.soton.ac.uk/courses/10"</span>
+                <span class="punctuation">]</span>,
+                <span class="key">"faculty"</span>: <span class="string">"http://comp3227.ecs.soton.ac.uk/faculties/5"</span>
+            <span class="punctuation">}</span>
+        </pre>
+
+        <div id="PATCHMODULE"></div>
+        <p></p>> <ht class="basic-title">PATCH http://comp3227.ecs.soton.ac.uk/modules/{moduleId}</ht>
+
+        <br>
+        <table>
+            <tr>
+                <th>Key</th>
+                <th>Required</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>url</td>
+                <td>optional</td>
+                <td>Url contains the specific module you wish to edit</td>
+            </tr>
+            <tr>
+                <td>name</td>
+                <td>required</td>
+                <td>Name of the module</td>
+            </tr>
+            <tr>
+                <td>code</td>
+                <td>required</td>
+                <td>Code of the module</td>
+            </tr>
+            <tr>
+                <td>year</td>
+                <td>optional</td>
+                <td>Year the module is studied in</td>
+            </tr>
+            <tr>
+                <td>semester</td>
+                <td>optional</td>
+                <td>Semester the module is studied in</td>
+            </tr>
+            <tr>
+                <td>courses</td>
+                <td>optional</td>
+                <td>List of courses this module belongs to</td>
+            </tr>
+            <tr>
+                <td>faculty</td>
+                <td>required</td>
+                <td>The faculty the module belongs to</td>
+            </tr>
+        </table>
+        <br> <br>
+
+        <br> <ht class="basic-subtitle">Example Request</ht>
+        <br>
+        PATCH http://comp3227.ecs.soton.ac.uk/modules/283
+        <br> <br> 
+
+        <ht class="basic-subtitle">Headers:</ht>
+        <br> <br>
+
+        <table>
+            <tr>
+                <th>Authorization</th>
+                <td>Token ...</td>
+            </tr>
+        </table>
+
+        <br> <br>
+        <ht class="basic-subtitle">Body:</ht>
+        <br> <br>
+        <pre>
+            <span class="punctuation">{</span>
+                <span class="key">"name"</span>: <span class="string">"Football Center Back"</span>,
+            <span class="punctuation">}</span>
+        </pre>
+
+        <br> <ht class="basic-subtitle">Example Response</ht>
+        <br>
+
+        <br> <br> <ht class="basic-subtitle">Headers:</ht>
+        <br> <br>
+
+        <table>
+            <tr>
+                <th>Key</th>
+                <th>Value</th>
+            </tr>
+            <tr>
+                <td>Server</td>
+                <td>nginx/1.20.1</td>
+            </tr>
+            <tr>
+                <td>Date</td>
+                <td>Mon, 27 Nov 2023 19:43:05 GMT</td>
+            </tr>
+            <tr>
+                <td>Content-Type</td>
+                <td>application/json</td>
+            </tr>
+            <tr>
+                <td>Content-Length</td>
+                <td>289</td>
+            </tr>
+            <tr>
+                <td>Connection</td>
+                <td>keep-alive</td>
+            </tr>
+            <tr>
+                <td>Vary</td>
+                <td>Accept</td>
+            </tr>
+            <tr>
+                <td>Allow</td>
+                <td>GET, PUT, PATCH, DELETE, HEAD, OPTIONS</td>
+            </tr>
+            <tr>
+                <td>X-Frame-Options</td>
+                <td>DENY</td>
+            </tr>
+            <tr>
+                <td>X-Content-Type-Options</td>
+                <td>nosniff</td>
+            </tr>
+            <tr>
+                <td>Referrer-Policy</td>
+                <td>same-origin</td>
+            </tr>
+        </table>
+
+        <ht class="basic-subtitle">Body:</ht> 
+        <br> <br>
+        <pre>
+            <span class="punctuation">{</span>
+                <span class="key">"url"</span>: <span class="string">"http://comp3227.ecs.soton.ac.uk/modules/283"</span>,
+                <span class="key">"name"</span>: <span class="string">"Football Center Back"</span>,
+                <span class="key">"code"</span>: <span class="string">"CB3"</span>,
+                <span class="key">"year"</span>: <span class="integer">2</span>,
+                <span class="key">"semester"</span>: <span class="integer">2</span>,
+                <span class="key">"courses"</span>: <span class="punctuation">[</span>
+                    <span class="string">"http://comp3227.ecs.soton.ac.uk/courses/10"</span>
+                <span class="punctuation">]</span>,
+                <span class="key">"faculty"</span>: <span class="string">"http://comp3227.ecs.soton.ac.uk/faculties/5"</span>
+            <span class="punctuation">}</span>
+        </pre>
+        <br> <br>
+
+
+        <div id="DELETEMODULE"></div>
+        <p></p>> <ht class="basic-title">DELETE http://comp3227.ecs.soton.ac.uk/modules/{moduleId}</ht>
+        <br> <ht class="basic-subtitle">Example Request</ht>
+        <br>
+        DELETE http://comp3227.ecs.soton.ac.uk/modules/291
+        <br> <br> 
+
+        <table>
+            <tr>
+                <th>Authorization</th>
+                <td>Token ...</td>
+            </tr>
+        </table>
+
+        <br> <ht class="basic-subtitle">Example Response</ht>
+        <br> <br>
+
+        <br> <ht class="basic-subtitle">Headers:</ht>
+        <br>
+
+        <br>
+        <table>
+            <tr>
+                <th>Key</th>
+                <th>Value</th>
+            </tr>
+            <tr>
+                <td>Server</td>
+                <td>nginx/1.20.1</td>
+            </tr>
+            <tr>
+                <td>Date</td>
+                <td>Mon, 27 Nov 2023 19:44:20 GMT</td>
+            </tr>
+            <tr>
+                <td>Content-Type</td>
+                <td>application/json</td>
+            </tr>
+            <tr>
+                <td>Content-Length</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>Connection</td>
+                <td>keep-alive</td>
+            </tr>
+            <tr>
+                <td>Vary</td>
+                <td>Accept</td>
+            </tr>
+            <tr>
+                <td>Allow</td>
+                <td>GET, PUT, PATCH, DELETE, HEAD, OPTIONS</td>
+            </tr>
+            <tr>
+                <td>X-Frame-Options</td>
+                <td>DENY</td>
+            </tr>
+            <tr>
+                <td>X-Content-Type-Options</td>
+                <td>nosniff</td>
+            </tr>
+            <tr>
+                <td>Referrer-Policy</td>
+                <td>same-origin</td>
+            </tr>
+        </table>
+        <br> <br>
+
+        <div id="OPTIONSMODULE"></div>
+        <p></p>> <ht class="basic-title">OPTIONS http://comp3227.ecs.soton.ac.uk/modules/{moduleId}</ht>
+        <br> <ht class="basic-subtitle">Example Request</ht>
+        <br>
+        OPTIONS http://comp3227.ecs.soton.ac.uk/modules/283
+        <br> <br> 
+
+        <br> <ht class="basic-subtitle">Example Response</ht> 
+        <br>
+
+        <br> <br> <ht class="basic-subtitle">Headers:</ht>
+        <br> <br>
+
+        <table>
+            <tr>
+                <th>Key</th>
+                <th>Value</th>
+            </tr>
+            <tr>
+                <td>Server</td>
+                <td>nginx/1.20.1</td>
+            </tr>
+            <tr>
+                <td>Date</td>
+                <td>Mon, 27 Nov 2023 19:45:40 GMT</td>
+            </tr>
+            <tr>
+                <td>Content-Type</td>
+                <td>application/json</td>
+            </tr>
+            <tr>
+                <td>Content-Length</td>
+                <td>249</td>
+            </tr>
+            <tr>
+                <td>Connection</td>
+                <td>keep-alive</td>
+            </tr>
+            <tr>
+                <td>Vary</td>
+                <td>Accept</td>
+            </tr>
+            <tr>
+                <td>Allow</td>
+                <td>GET, PUT, PATCH, DELETE, HEAD, OPTIONS</td>
+            </tr>
+            <tr>
+                <td>X-Frame-Options</td>
+                <td>DENY</td>
+            </tr>
+            <tr>
+                <td>X-Content-Type-Options</td>
+                <td>nosniff</td>
+            </tr>
+            <tr>
+                <td>Referrer-Policy</td>
+                <td>same-origin</td>
+            </tr>
+        </table>
+
+        <br> <br> <ht class="basic-subtitle">Body:</ht> <br> <br>
+
+        <pre>
+            <span class="punctuation">{</span>
+                <span class="key">"name"</span>: <span class="string">"Module By Id"</span>,
+                <span class="key">"description"</span>: <span class="string">""</span>,
+                <span class="key">"renders"</span>: <span class="punctuation">[</span>
+                    <span class="string">"application/json"</span>,
+                    <span class="string">"application/xml"</span>,
+                    <span class="string">"text/csv"</span>
+                <span class="punctuation">]</span>,
+                <span class="key">"parses"</span>: <span class="punctuation">[</span>
+                    <span class="string">"application/xml"</span>,
+                    <span class="string">"application/json"</span>,
+                    <span class="string">"text/csv"</span>
+                <span class="punctuation">]</span>
+            <span class="punctuation">}</span>
+        </pre>
+        <br><br>
+
+        <p> 
+            <ht class="basic-title">URI template: http://comp3227.ecs.soton.ac.uk/faculties</ht>
+            <br>
+            The purpose of this endpoint is to allow the user to retrieve faculty and see what faculty a module belongs to
+            <br>
+            <br>
+
+            <br>
+            In this URI template, there is only one parameter: {facultyId}
+            <br>
+            This parameter ONLY takes an integer.
+            <br>
+        </p>
+
+        <p>
+            The following HTTP methods can be used: <br>
+            <ul>
+                <li>GET</li>
+                <li>HEAD</li>
+                <li>OPTIONS</li>
+            </ul>
+        </p>
+
+        <div id="GETFACULTIES"></div>
+        <p></p>> <ht class="basic-title">GET http://comp3227.ecs.soton.ac.uk/faculties</ht>
+        <br> <ht class="basic-subtitle">Example Request</ht>
+        <br>
+        GET http://comp3227.ecs.soton.ac.uk/faculties
+        <br> <br> 
+
+        <br> <ht class="basic-subtitle">Example Response</ht>
+        <br> <br>
+
+        <ht class="basic-subtitle">Headers:</ht>
+        <br> <br>
+
+        <br>
+        <table>
+            <tr>
+                <th>Key</th>
+                <th>Value</th>
+            </tr>
+            <tr>
+                <td>Server</td>
+                <td>nginx/1.20.1</td>
+            </tr>
+            <tr>
+                <td>Date</td>
+                <td>Mon, 27 Nov 2023 19:46:12 GMT</td>
+            </tr>
+            <tr>
+                <td>Content-Type</td>
+                <td>application/json</td>
+            </tr>
+            <tr>
+                <td>Content-Length</td>
+                <td>579</td>
+            </tr>
+            <tr>
+                <td>Connection</td>
+                <td>keep-alive</td>
+            </tr>
+            <tr>
+                <td>Vary</td>
+                <td>Accept</td>
+            </tr>
+            <tr>
+                <td>Allow</td>
+                <td>GET, HEAD, OPTIONS</td>
+            </tr>
+            <tr>
+                <td>X-Frame-Options</td>
+                <td>DENY</td>
+            </tr>
+            <tr>
+                <td>X-Content-Type-Options</td>
+                <td>nosniff</td>
+            </tr>
+            <tr>
+                <td>Referrer-Policy</td>
+                <td>same-origin</td>
+            </tr>
+        </table>
+
+        <br> <br> <ht class="basic-subtitle">Body:</ht>
+        <br> <br>
+
+        <pre>
+            <span class="punctuation">[</span>
+                <span class="punctuation">{</span>
+                    <span class="key">"url"</span>: <span class="string">"http://comp3227.ecs.soton.ac.uk/faculties/1"</span>,
+                    <span class="key">"name"</span>: <span class="string">"Arts and Humanities"</span>,
+                <span class="punctuation">},</span>
+                <span class="punctuation">{</span>
+                    <span class="key">"url"</span>: <span class="string">"http://comp3227.ecs.soton.ac.uk/faculties/2"</span>,
+                    <span class="key">"name"</span>: <span class="string">"Engineering and Physical Sciences"</span>,
+                <span class="punctuation">},</span>
+                <span class="punctuation">{</span>
+                    <span class="key">"url"</span>: <span class="string">"http://comp3227.ecs.soton.ac.uk/faculties/3"</span>,
+                    <span class="key">"name"</span>: <span class="string">"Environmental and Life Sciences"</span>,
+                <span class="punctuation">},</span>
+            <span class="string">...</span>
+            <span class="punctuation">]</span>
+        </pre>
+
+        <br><br>
+
+
+        <div id="HEADFACULTIES"></div>
+        <p></p>> <ht class="basic-title">HEAD http://comp3227.ecs.soton.ac.uk/faculties</ht>
+        <br> <ht class="basic-subtitle">Example Request</ht>
+        <br>
+        HEAD http://comp3227.ecs.soton.ac.uk/faculties
+        <br> <br> 
+
+        <br> <ht class="basic-subtitle">Example Response</ht>
+        <br> <br>
+        <table>
+            <tr>
+                <th>Key</th>
+                <th>Value</th>
+            </tr>
+            <tr>
+                <td>Server</td>
+                <td>nginx/1.20.1</td>
+            </tr>
+            <tr>
+                <td>Date</td>
+                <td>Mon, 27 Nov 2023 19:47:22 GMT</td>
+            </tr>
+            <tr>
+                <td>Content-Type</td>
+                <td>application/json</td>
+            </tr>
+            <tr>
+                <td>Content-Length</td>
+                <td>579</td>
+            </tr>
+            <tr>
+                <td>Connection</td>
+                <td>keep-alive</td>
+            </tr>
+            <tr>
+                <td>Vary</td>
+                <td>Accept</td>
+            </tr>
+            <tr>
+                <td>Allow</td>
+                <td>GET, HEAD, OPTIONS</td>
+            </tr>
+            <tr>
+                <td>X-Frame-Options</td>
+                <td>DENY</td>
+            </tr>
+            <tr>
+                <td>X-Content-Type-Options</td>
+                <td>nosniff</td>
+            </tr>
+            <tr>
+                <td>Referrer-Policy</td>
+                <td>same-origin</td>
+            </tr>
+        </table>
+        <br> <br>
+
+        <div id="OPTIONSFACULTIES"></div>
+        <p></p>> <ht class="basic-title">OPTIONS http://comp3227.ecs.soton.ac.uk/faculties</ht>
+        <br> <ht class="basic-subtitle">Example Request</ht>
+        <br>
+        OPTIONS http://comp3227.ecs.soton.ac.uk/faculties
+        <br> <br> 
+        <br> <ht class="basic-subtitle">Example Response</ht>
+        <br> 
+
+        <br> <br> <ht class="basic-subtitle">Headers:</ht>
+        <br> <br>
+
+        <table>
+            <tr>
+                <th>Key</th>
+                <th>Value</th>
+            </tr>
+            <tr>
+                <td>Server</td>
+                <td>nginx/1.20.1</td>
+            </tr>
+            <tr>
+                <td>Date</td>
+                <td>Mon, 27 Nov 2023 19:48:12 GMT</td>
+            </tr>
+            <tr>
+                <td>Content-Type</td>
+                <td>application/json</td>
+            </tr>
+            <tr>
+                <td>Content-Length</td>
+                <td>249</td>
+            </tr>
+            <tr>
+                <td>Connection</td>
+                <td>keep-alive</td>
+            </tr>
+            <tr>
+                <td>Vary</td>
+                <td>Accept</td>
+            </tr>
+            <tr>
+                <td>Allow</td>
+                <td>GET, HEAD, OPTIONS</td>
+            </tr>
+            <tr>
+                <td>X-Frame-Options</td>
+                <td>DENY</td>
+            </tr>
+            <tr>
+                <td>X-Content-Type-Options</td>
+                <td>nosniff</td>
+            </tr>
+            <tr>
+                <td>Referrer-Policy</td>
+                <td>same-origin</td>
+            </tr>
+        </table>
+
+        <br> <br> <ht class="basic-subtitle">Body:</ht> <br> <br>
+
+        <pre>
+            <span class="punctuation">{</span>
+                <span class="key">"name"</span>: <span class="string">"Faculty List"</span>,
+                <span class="key">"description"</span>: <span class="string">""</span>,
+                <span class="key">"renders"</span>: <span class="punctuation">[</span>
+                    <span class="string">"application/json"</span>,
+                    <span class="string">"application/xml"</span>,
+                    <span class="string">"text/csv"</span>
+                <span class="punctuation">]</span>,
+                <span class="key">"parses"</span>: <span class="punctuation">[</span>
+                    <span class="string">"application/xml"</span>,
+                    <span class="string">"application/json"</span>,
+                    <span class="string">"text/csv"</span>
+                <span class="punctuation">]</span>
+            <span class="punctuation">}</span>
+        </pre>
+
+        <br> <br>
+
+        <p> 
+            <ht class="basic-title">URI template: http://comp3227.ecs.soton.ac.uk/faculties/{facultyId}</ht>
+            <br>
+            The purpose of this endpoint is to allow the user to retrieve information about each faculty, which includes the url and name of a faculty.
+            <br>
+            <br>
+
+            <br>
+            In this URI template, there is only one parameter: {facultyId}
+            <br>
+            This parameter ONLY takes an integer.
+            <br>
+        </p>
+
+        <p>
+            The following HTTP methods can be used: <br>
+            <ul>
+                <li>GET</li>
+                <li>HEAD</li>
+                <li>OPTIONS</li>
+            </ul>
+        </p>
+
+        <div id="GETFACULTY"></div>
+        <p></p>> <ht class="basic-title">GET http://comp3227.ecs.soton.ac.uk/faculties/{facultyId}</ht>
+        <br> <ht class="basic-subtitle">Example Request</ht>
+        <br>
+        GET http://comp3227.ecs.soton.ac.uk/faculties/1
+        <br> <br> 
+
+
+        <ht class="basic-subtitle">Example Response</ht>
+        <br> <br>
+
+        <ht class="basic-subtitle">Headers:</ht>
+        <br>
+        <table>
+            <tr>
+                <th>Key</th>
+                <th>Value</th>
+            </tr>
+            <tr>
+                <td>Server</td>
+                <td>nginx/1.20.1</td>
+            </tr>
+            <tr>
+                <td>Date</td>
+                <td>Mon, 27 Nov 2023 19:49:21 GMT</td>
+            </tr>
+            <tr>
+                <td>Content-Type</td>
+                <td>application/json</td>
+            </tr>
+            <tr>
+                <td>Content-Length</td>
+                <td>96</td>
+            </tr>
+            <tr>
+                <td>Connection</td>
+                <td>keep-alive</td>
+            </tr>
+            <tr>
+                <td>Vary</td>
+                <td>Accept</td>
+            </tr>
+            <tr>
+                <td>Allow</td>
+                <td>GET, HEAD, OPTIONS</td>
+            </tr>
+            <tr>
+                <td>X-Frame-Options</td>
+                <td>DENY</td>
+            </tr>
+            <tr>
+                <td>X-Content-Type-Options</td>
+                <td>nosniff</td>
+            </tr>
+            <tr>
+                <td>Referrer-Policy</td>
+                <td>same-origin</td>
+            </tr>
+        </table>
+        <br> <br>
+
+        <ht class="basic-subtitle">Body:</ht>
+        <br> <br>
+        <pre>
+            <span class="punctuation">{</span>
+                <span class="key">"url"</span>: <span class="string">"http://comp3227.ecs.soton.ac.uk/faculties/1"</span>,
+                <span class="key">"name"</span>: <span class="string">"Arts and Humanities"</span>
+            <span class="punctuation">}</span>
+        </pre>
+
+        <br> <br>
+
+        <div id="HEADFACULTY"></div>
+        <p></p>> <ht class="basic-title">HEAD http://comp3227.ecs.soton.ac.uk/faculties/{facultyId}</ht>
+        <br> <ht class="basic-subtitle">Example Request</ht>
+        <br>
+        HEAD http://comp3227.ecs.soton.ac.uk/faculties/1
+        <br> <br> 
+
+        <br> <ht class="basic-subtitle">Example Response</ht>
+        <br> 
+
+        <br>
+        <table>
+            <tr>
+                <th>Key</th>
+                <th>Value</th>
+            </tr>
+            <tr>
+                <td>Server</td>
+                <td>nginx/1.20.1</td>
+            </tr>
+            <tr>
+                <td>Date</td>
+                <td>Mon, 27 Nov 2023 19:50:51 GMT</td>
+            </tr>
+            <tr>
+                <td>Content-Type</td>
+                <td>application/json</td>
+            </tr>
+            <tr>
+                <td>Content-Length</td>
+                <td>96</td>
+            </tr>
+            <tr>
+                <td>Connection</td>
+                <td>keep-alive</td>
+            </tr>
+            <tr>
+                <td>Vary</td>
+                <td>Accept</td>
+            </tr>
+            <tr>
+                <td>Allow</td>
+                <td>GET, HEAD, OPTIONS</td>
+            </tr>
+            <tr>
+                <td>X-Frame-Options</td>
+                <td>DENY</td>
+            </tr>
+            <tr>
+                <td>X-Content-Type-Options</td>
+                <td>nosniff</td>
+            </tr>
+            <tr>
+                <td>Referrer-Policy</td>
+                <td>same-origin</td>
+            </tr>
+        </table>
+
+        <br> <br>
+
+        <div id="OPTIONSFACULTY"></div>
+        <p></p>> <ht class="basic-title">OPTIONS http://comp3227.ecs.soton.ac.uk/faculties/{facultyId}</ht>
+        <br> <ht class="basic-subtitle">Example Request</ht>
+        <br>
+        OPTIONS http://comp3227.ecs.soton.ac.uk/faculties/1
+        <br> <br> 
+
+        <br> <ht class="basic-subtitle">Example Response</ht>
+        <br> 
+
+        <br> <br> <ht class="basic-subtitle">Headers:</ht>
+        <br> <br>
+
+        <table>
+            <tr>
+                <th>Key</th>
+                <th>Value</th>
+            </tr>
+            <tr>
+                <td>Server</td>
+                <td>nginx/1.20.1</td>
+            </tr>
+            <tr>
+                <td>Date</td>
+                <td>Mon, 27 Nov 2023 19:52:12 GMT</td>
+            </tr>
+            <tr>
+                <td>Content-Type</td>
+                <td>application/json</td>
+            </tr>
+            <tr>
+                <td>Content-Length</td>
+                <td>250</td>
+            </tr>
+            <tr>
+                <td>Connection</td>
+                <td>keep-alive</td>
+            </tr>
+            <tr>
+                <td>Vary</td>
+                <td>Accept</td>
+            </tr>
+            <tr>
+                <td>Allow</td>
+                <td>GET, HEAD, OPTIONS</td>
+            </tr>
+            <tr>
+                <td>X-Frame-Options</td>
+                <td>DENY</td>
+            </tr>
+            <tr>
+                <td>X-Content-Type-Options</td>
+                <td>nosniff</td>
+            </tr>
+            <tr>
+                <td>Referrer-Policy</td>
+                <td>same-origin</td>
+            </tr>
+        </table>
+
+        <br> <br> <ht class="basic-subtitle">Body:</ht> <br> <br>
+
+        <pre>
+            <span class="punctuation">{</span>
+                <span class="key">"name"</span>: <span class="string">"Faculty By Id"</span>,
+                <span class="key">"description"</span>: <span class="string">""</span>,
+                <span class="key">"renders"</span>: <span class="punctuation">[</span>
+                    <span class="string">"application/json"</span>,
+                    <span class="string">"application/xml"</span>,
+                    <span class="string">"text/csv"</span>
+                <span class="punctuation">]</span>,
+                <span class="key">"parses"</span>: <span class="punctuation">[</span>
+                    <span class="string">"application/xml"</span>,
+                    <span class="string">"application/json"</span>,
+                    <span class="string">"text/csv"</span>
+                <span class="punctuation">]</span>
+            <span class="punctuation">}</span>
+        </pre>
+
+        <br> <br>
+
+        <p> 
+            <ht class="basic-title">URI template: http://comp3227.ecs.soton.ac.uk/courses</ht>
+            <br>
+            The purpose of this endpoint is to allow the user to retrieve all the faculties a module can belong to
+            <br>
+            <br>
+
+            <br>
+            In this URI template, there is only one parameter: {courseId}
+            <br>
+            This parameter ONLY takes an integer.
+            <br>
+        </p>
+
+        <p>
+            The following HTTP methods can be used: <br>
+            <ul>
+                <li>GET</li>
+                <li>HEAD</li>
+                <li>OPTIONS</li>
+            </ul>
+        </p>
+
+        <div id="GETCOURSES"></div>
+        <p></p>> <ht class="basic-title">GET http://comp3227.ecs.soton.ac.uk/courses</ht>
+        <br> <ht class="basic-subtitle">Example Request</ht>
+        <br>
+        GET http://comp3227.ecs.soton.ac.uk/courses
+        <br> <br> 
+
+        <br> <ht class="basic-subtitle">Example Response</ht>
+        <br> <br>
+
+        <ht class="basic-subtitle">Headers:</ht>
+        <br> <br>
+
+        <br>
+        <table>
+            <tr>
+                <th>Key</th>
+                <th>Value</th>
+            </tr>
+            <tr>
+                <td>Server</td>
+                <td>nginx/1.20.1</td>
+            </tr>
+            <tr>
+                <td>Date</td>
+                <td>Mon, 27 Nov 2023 19:53:49 GMT</td>
+            </tr>
+            <tr>
+                <td>Content-Type</td>
+                <td>application/json</td>
+            </tr>
+            <tr>
+                <td>Content-Length</td>
+                <td>1288</td>
+            </tr>
+            <tr>
+                <td>Connection</td>
+                <td>keep-alive</td>
+            </tr>
+            <tr>
+                <td>Vary</td>
+                <td>Accept</td>
+            </tr>
+            <tr>
+                <td>Allow</td>
+                <td>GET, HEAD, OPTIONS</td>
+            </tr>
+            <tr>
+                <td>X-Frame-Options</td>
+                <td>DENY</td>
+            </tr>
+            <tr>
+                <td>X-Content-Type-Options</td>
+                <td>nosniff</td>
+            </tr>
+            <tr>
+                <td>Referrer-Policy</td>
+                <td>same-origin</td>
+            </tr>
+        </table>
+
+        <br> <br> <ht class="basic-subtitle">Body:</ht>
+        <br> <br>
+
+        <pre>
+            <span class="punctuation">[</span>
+                <span class="punctuation">{</span>
+                    <span class="key">"url"</span>: <span class="string">"http://comp3227.ecs.soton.ac.uk/courses/1"</span>,
+                    <span class="key">"name"</span>: <span class="string">"Acoustical Engineering"</span>,
+                <span class="punctuation">},</span>
+                <span class="punctuation">{</span>
+                    <span class="key">"url"</span>: <span class="string">"http://comp3227.ecs.soton.ac.uk/courses/2"</span>,
+                    <span class="key">"name"</span>: <span class="string">"Aeronautics and Astronautics"</span>,
+                <span class="punctuation">},</span>
+                <span class="punctuation">{</span>
+                    <span class="key">"url"</span>: <span class="string">"http://comp3227.ecs.soton.ac.uk/courses/3"</span>,
+                    <span class="key">"name"</span>: <span class="string">"Aeronautics and Astronautics"</span>,
+                <span class="punctuation">},</span>
+            <span class="string">...</span>
+            <span class="punctuation">]</span>
+        </pre>
+
+        <br><br>
+
+        <div id="HEADCOURSES"></div>
+        <p></p>> <ht class="basic-title">HEAD http://comp3227.ecs.soton.ac.uk/courses</ht>
+        <br> <ht class="basic-subtitle">Example Request</ht>
+        <br>
+        HEAD http://comp3227.ecs.soton.ac.uk/courses
+        <br> <br> 
+
+        <ht class="basic-subtitle">Headers:</ht>
+        <br> <br>
+
+        <br>
+        <table>
+            <tr>
+                <th>Key</th>
+                <th>Value</th>
+            </tr>
+            <tr>
+                <td>Server</td>
+                <td>nginx/1.20.1</td>
+            </tr>
+            <tr>
+                <td>Date</td>
+                <td>Mon, 27 Nov 2023 19:54:50 GMT</td>
+            </tr>
+            <tr>
+                <td>Content-Type</td>
+                <td>application/json</td>
+            </tr>
+            <tr>
+                <td>Content-Length</td>
+                <td>1288</td>
+            </tr>
+            <tr>
+                <td>Connection</td>
+                <td>keep-alive</td>
+            </tr>
+            <tr>
+                <td>Vary</td>
+                <td>Accept</td>
+            </tr>
+            <tr>
+                <td>Allow</td>
+                <td>GET, HEAD, OPTIONS</td>
+            </tr>
+            <tr>
+                <td>X-Frame-Options</td>
+                <td>DENY</td>
+            </tr>
+            <tr>
+                <td>X-Content-Type-Options</td>
+                <td>nosniff</td>
+            </tr>
+            <tr>
+                <td>Referrer-Policy</td>
+                <td>same-origin</td>
+            </tr>
+        </table>
+
+        <div id="OPTIONSCOURSES"></div>
+        <p></p>> <ht class="basic-title">OPTIONS http://comp3227.ecs.soton.ac.uk/courses</ht>
+        <br> <ht class="basic-subtitle">Example Request</ht>
+        <br>
+        OPTIONS http://comp3227.ecs.soton.ac.uk/courses/1
+        <br> <br> 
+
+        <br> <ht class="basic-subtitle">Example Response</ht>
+        <br> 
+
+        <br> <br> <ht class="basic-subtitle">Headers:</ht>
+        <br> <br>
+
+        <table>
+            <tr>
+                <th>Key</th>
+                <th>Value</th>
+            </tr>
+            <tr>
+                <td>Server</td>
+                <td>nginx/1.20.1</td>
+            </tr>
+            <tr>
+                <td>Date</td>
+                <td>Mon, 27 Nov 2023 19:55:25 GMT</td>
+            </tr>
+            <tr>
+                <td>Content-Type</td>
+                <td>application/json</td>
+            </tr>
+            <tr>
+                <td>Content-Length</td>
+                <td>248</td>
+            </tr>
+            <tr>
+                <td>Connection</td>
+                <td>keep-alive</td>
+            </tr>
+            <tr>
+                <td>Vary</td>
+                <td>Accept</td>
+            </tr>
+            <tr>
+                <td>Allow</td>
+                <td>GET, HEAD, OPTIONS</td>
+            </tr>
+            <tr>
+                <td>X-Frame-Options</td>
+                <td>DENY</td>
+            </tr>
+            <tr>
+                <td>X-Content-Type-Options</td>
+                <td>nosniff</td>
+            </tr>
+            <tr>
+                <td>Referrer-Policy</td>
+                <td>same-origin</td>
+            </tr>
+        </table>
+
+        <br> <br> <ht class="basic-subtitle">Body:</ht> <br> <br>
+
+        <pre>
+            <span class="punctuation">{</span>
+                <span class="key">"name"</span>: <span class="string">"Course List"</span>,
+                <span class="key">"description"</span>: <span class="string">""</span>,
+                <span class="key">"renders"</span>: <span class="punctuation">[</span>
+                    <span class="string">"application/json"</span>,
+                    <span class="string">"application/xml"</span>,
+                    <span class="string">"text/csv"</span>
+                <span class="punctuation">]</span>,
+                <span class="key">"parses"</span>: <span class="punctuation">[</span>
+                    <span class="string">"application/xml"</span>,
+                    <span class="string">"application/json"</span>,
+                    <span class="string">"text/csv"</span>
+                <span class="punctuation">]</span>
+            <span class="punctuation">}</span>
+        </pre>
+
+        <br> <br>
+
+        <p> 
+            <ht class="basic-title">URI template: http://comp3227.ecs.soton.ac.uk/courses/{courseId}</ht>
+            <br>
+            The purpose of this endpoint is to allow the user to retrieve information about a specific course. This includes the URL, name, code, degree, faculty and modules that are on this course.
+            <br>
+            <br>
+
+            <br>
+            In this URI template, there is only one parameter: {courseId}
+            <br>
+            This parameter ONLY takes an integer.
+            <br>
+        </p>
+
+        <p>
+            The following HTTP methods can be used: <br>
+            <ul>
+                <li>GET</li>
+                <li>HEAD</li>
+                <li>OPTIONS</li>
+            </ul>
+        </p>
+
+        <div id="GETCOURSE"></div>
+        <p></p>> <ht class="basic-title">GET http://comp3227.ecs.soton.ac.uk/courses/{courseId}</ht>
+        <br> <ht class="basic-subtitle">Example Request</ht>
+        <br>
+        GET http://comp3227.ecs.soton.ac.uk/courses/1
+        <br> <br> 
+
+        <ht class="basic-subtitle">Example Response</ht>
+        <br> <br>
+
+        <ht class="basic-subtitle">Headers:</ht>
+        <br>
+        <table>
+            <tr>
+                <th>Key</th>
+                <th>Value</th>
+            </tr>
+            <tr>
+                <td>Server</td>
+                <td>nginx/1.20.1</td>
+            </tr>
+            <tr>
+                <td>Date</td>
+                <td>Mon, 27 Nov 2023 19:56:25 GMT</td>
+            </tr>
+            <tr>
+                <td>Content-Type</td>
+                <td>application/json</td>
+            </tr>
+            <tr>
+                <td>Content-Length</td>
+                <td>1485</td>
+            </tr>
+            <tr>
+                <td>Connection</td>
+                <td>keep-alive</td>
+            </tr>
+            <tr>
+                <td>Vary</td>
+                <td>Accept</td>
+            </tr>
+            <tr>
+                <td>Allow</td>
+                <td>GET, HEAD, OPTIONS</td>
+            </tr>
+            <tr>
+                <td>X-Frame-Options</td>
+                <td>DENY</td>
+            </tr>
+            <tr>
+                <td>X-Content-Type-Options</td>
+                <td>nosniff</td>
+            </tr>
+            <tr>
+                <td>Referrer-Policy</td>
+                <td>same-origin</td>
+            </tr>
+        </table>
+        <br> <br>
+
+        <ht class="basic-subtitle">Body:</ht>
+        <br> <br>
+        <pre>
+            <span class="punctuation">{</span>
+                <span class="key">"url"</span>: <span class="string">"http://comp3227.ecs.soton.ac.uk/courses/1"</span>,
+                <span class="key">"name"</span>: <span class="string">"Acoustical Engineering"</span>,
+                <span class="key">"code"</span>: <span class="string">"HH72"</span>,
+                <span class="key">"degree"</span>: <span class="string">"BEng"</span>,
+                <span class="key">"faculty"</span>: <span class="string">"http://comp3227.ecs.soton.ac.uk/faculties/2"</span>,
+                <span class="key">"modules"</span>: <span class="punctuation">[</span>
+                    <span class="string">"http://comp3227.ecs.soton.ac.uk/modules/1"</span>,
+                    <span class="string">"http://comp3227.ecs.soton.ac.uk/modules/2"</span>,
+                    <span class="string">"http://comp3227.ecs.soton.ac.uk/modules/123"</span>,
+                    <span class="string">"http://comp3227.ecs.soton.ac.uk/modules/124"</span>,
+                    <span class="string">"http://comp3227.ecs.soton.ac.uk/modules/125"</span>,
+                    <span class="string">"http://comp3227.ecs.soton.ac.uk/modules/213"</span>,
+                    <span class="string">"http://comp3227.ecs.soton.ac.uk/modules/237"</span>,
+                    <span class="string">"http://comp3227.ecs.soton.ac.uk/modules/293"</span>,
+                    <span class="string">"http://comp3227.ecs.soton.ac.uk/modules/315"</span>,
+                    <span class="string">"http://comp3227.ecs.soton.ac.uk/modules/319"</span>,
+                    <span class="string">"http://comp3227.ecs.soton.ac.uk/modules/386"</span>,
+                    <span class="string">"http://comp3227.ecs.soton.ac.uk/modules/466"</span>,
+                    <span class="string">"http://comp3227.ecs.soton.ac.uk/modules/467"</span>,
+                    <span class="string">"http://comp3227.ecs.soton.ac.uk/modules/468"</span>,
+                    <span class="string">"http://comp3227.ecs.soton.ac.uk/modules/500"</span>,
+                    <span class="string">"http://comp3227.ecs.soton.ac.uk/modules/502"</span>,
+                    <span class="string">"http://comp3227.ecs.soton.ac.uk/modules/542"</span>,
+                    <span class="string">"http://comp3227.ecs.soton.ac.uk/modules/564"</span>,
+                    <span class="string">"http://comp3227.ecs.soton.ac.uk/modules/565"</span>,
+                    <span class="string">"http://comp3227.ecs.soton.ac.uk/modules/568"</span>,
+                    <span class="string">"http://comp3227.ecs.soton.ac.uk/modules/593"</span>
+                <span class="punctuation">]</span>
+            <span class="punctuation">}</span>
+        </pre>
+
+        <br> <br>
+
+        <div id="HEADCOURSE"></div>
+        <p></p>> <ht class="basic-title">HEAD http://comp3227.ecs.soton.ac.uk/courses/{courseId}</ht>
+        <br> <ht class="basic-subtitle">Example Request</ht>
+        <br>
+        HEAD http://comp3227.ecs.soton.ac.uk/courses/1
+        <br> <br> 
+
+        <ht class="basic-subtitle">Headers:</ht>
+        <br> <br>
+
+        <br>
+        <table>
+            <tr>
+                <th>Key</th>
+                <th>Value</th>
+            </tr>
+            <tr>
+                <td>Server</td>
+                <td>nginx/1.20.1</td>
+            </tr>
+            <tr>
+                <td>Date</td>
+                <td>Mon, 27 Nov 2023 19:57:30 GMT</td>
+            </tr>
+            <tr>
+                <td>Content-Type</td>
+                <td>application/json</td>
+            </tr>
+            <tr>
+                <td>Content-Length</td>
+                <td>1485</td>
+            </tr>
+            <tr>
+                <td>Connection</td>
+                <td>keep-alive</td>
+            </tr>
+            <tr>
+                <td>Vary</td>
+                <td>Accept</td>
+            </tr>
+            <tr>
+                <td>Allow</td>
+                <td>GET, HEAD, OPTIONS</td>
+            </tr>
+            <tr>
+                <td>X-Frame-Options</td>
+                <td>DENY</td>
+            </tr>
+            <tr>
+                <td>X-Content-Type-Options</td>
+                <td>nosniff</td>
+            </tr>
+            <tr>
+                <td>Referrer-Policy</td>
+                <td>same-origin</td>
+            </tr>
+        </table>
+        <br><br>
+
+        <div id="OPTIONSCOURSE"></div>
+        <p></p>> <ht class="basic-title">OPTIONS http://comp3227.ecs.soton.ac.uk/courses/{courseId}</ht>
+        <br> <ht class="basic-subtitle">Example Request</ht>
+        <br>
+        OPTIONS http://comp3227.ecs.soton.ac.uk/courses/1
+        <br> <br> 
+
+        <br> <ht class="basic-subtitle">Example Response</ht>
+        <br> 
+
+        <br> <br> <ht class="basic-subtitle">Headers:</ht>
+        <br> <br>
+
+        <table>
+            <tr>
+                <th>Key</th>
+                <th>Value</th>
+            </tr>
+            <tr>
+                <td>Server</td>
+                <td>nginx/1.20.1</td>
+            </tr>
+            <tr>
+                <td>Date</td>
+                <td>Mon, 27 Nov 2023 19:58:59 GMT</td>
+            </tr>
+            <tr>
+                <td>Content-Type</td>
+                <td>application/json</td>
+            </tr>
+            <tr>
+                <td>Content-Length</td>
+                <td>249</td>
+            </tr>
+            <tr>
+                <td>Connection</td>
+                <td>keep-alive</td>
+            </tr>
+            <tr>
+                <td>Vary</td>
+                <td>Accept</td>
+            </tr>
+            <tr>
+                <td>Allow</td>
+                <td>GET, HEAD, OPTIONS</td>
+            </tr>
+            <tr>
+                <td>X-Frame-Options</td>
+                <td>DENY</td>
+            </tr>
+            <tr>
+                <td>X-Content-Type-Options</td>
+                <td>nosniff</td>
+            </tr>
+            <tr>
+                <td>Referrer-Policy</td>
+                <td>same-origin</td>
+            </tr>
+        </table>
+
+        <br> <br> <ht class="basic-subtitle">Body:</ht> <br> <br>
+
+        <pre>
+            <span class="punctuation">{</span>
+                <span class="key">"name"</span>: <span class="string">"Course By Id"</span>,
+                <span class="key">"description"</span>: <span class="string">""</span>,
+                <span class="key">"renders"</span>: <span class="punctuation">[</span>
+                    <span class="string">"application/json"</span>,
+                    <span class="string">"application/xml"</span>,
+                    <span class="string">"text/csv"</span>
+                <span class="punctuation">]</span>,
+                <span class="key">"parses"</span>: <span class="punctuation">[</span>
+                    <span class="string">"application/xml"</span>,
+                    <span class="string">"application/json"</span>,
+                    <span class="string">"text/csv"</span>
+                <span class="punctuation">]</span>
+            <span class="punctuation">}</span>
+        </pre>
+
+        <br> <br>
+
+    </div>
+</div>
+</body>
+</html>
